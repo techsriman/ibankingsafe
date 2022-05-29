@@ -29,5 +29,5 @@ spec:
           mountPath: /u01/app         
   volumes:
     - name: ibankingvolume
-      persistenceVolumeClaim:
+      persistentVolumeClaim:
         claimName: ibankingpvc
