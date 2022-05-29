@@ -1,0 +1,5 @@
+server:
+  port: 8082
+db:
+  username: root
+  password: welcome1  

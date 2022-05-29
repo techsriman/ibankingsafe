@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ibankingsafepod
+  labels:
+    app: ibanking
+    version: "1.0"
+spec:
+  containers:
+    - name: ibanking
+      image: techsriman/ibanking:1.0
+      ports:
+        - name: http
+          containerPort: 8082
+          protocol: TCP
+      env:
+        - name: "db.username"
+          valueFrom:
+            secretKeyRef:
+              name: ibankingsafesecret
+              key: username
+        - name: "db.password"
+          valueFrom:
+            secretKeyRef:
+              name: ibankingsafesecret
+              key: password          
