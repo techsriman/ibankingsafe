@@ -23,4 +23,11 @@ spec:
           valueFrom:
             secretKeyRef:
               name: ibankingsafesecret
-              key: password          
+              key: password         
+      volumeMounts:
+        - name: ibankingvolume
+          mountPath: /u01/app         
+  volumes:
+    - name: ibankingvolume
+      persistenceVolumeClaim:
+        claimName: ibankingpvc

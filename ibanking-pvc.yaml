@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistenceVolumeClaim
+metadata:
+  name: ibankingpvc
+spec:
+  storageClassName: ibankingStorageClass
+  accessMode:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

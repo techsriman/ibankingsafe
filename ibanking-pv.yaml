@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistenceVolume
+metadata:
+  name: ibankingpv
+spec:
+  storageClassName: ibankingStorageClass
+  capacity:
+    storage: 2Gi
+  accessMode:
+    - ReadWriteMultiple
+  hostPath:
+    path: "/u01/data"
