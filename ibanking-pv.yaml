@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: ibankingpv
 spec:
-  storageClassName: ibankingStorageClass
+  storageClassName: ibankingstorageclass
   capacity:
     storage: 2Gi
   accessModes:

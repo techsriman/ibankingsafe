@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: ibankingpvc
 spec:
-  storageClassName: ibankingStorageClass
+  storageClassName: ibankingstorageclass
   accessModes:
     - ReadWriteOnce
   resources:
