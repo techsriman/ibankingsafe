@@ -7,6 +7,6 @@ spec:
   capacity:
     storage: 2Gi
   accessModes:
-    - ReadWriteMultiple
+    - ReadWriteMany
   hostPath:
     path: "/u01/data"
