@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: ibanking
-      image: techsriman/ibanking:1.0
+      image: techsriman/inetbanking:1.0
       ports:
         - name: http
           containerPort: 8082
