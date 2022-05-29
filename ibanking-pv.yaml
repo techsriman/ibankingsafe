@@ -6,7 +6,7 @@ spec:
   storageClassName: ibankingStorageClass
   capacity:
     storage: 2Gi
-  accessMode:
+  accessModes:
     - ReadWriteMultiple
   hostPath:
     path: "/u01/data"
