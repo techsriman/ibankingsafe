@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ibankingsafepod
+spec:
+  containers:
+    - name: ibankingsafe
+      image: techsriman/inetbankingsafe:1.0
+      ports:
+        - name: tomcatport
+          containerPort: 8082
+          protocol: TCP
+      readinessProbe:
+        httpGet:
+          path: /actuator/health/readiness
+          port: 8082
+        initialDelaySeconds: 15
+        timeoutSeconds: 15
+        failureThreshold: 3
+      livenessProbe:
+        httpGet:
+          path: /actuator/health/liveness
+          port: 8082
+        initialDelaySeconds: 15
+        timeoutSeconds: 15
+        failureThreshold: 3
+      env:
+        - name: "db.username"
+          valueFrom:
+            secretKeyRef:
+              name: ibankingsafesecret
+              key: username
+        - name: "db.password"
+          valueFrom:
+            secretKeyRef:
+              name: ibankingsafesecret
+              key: password        
+

@@ -3,3 +3,13 @@ server:
 db:
   username: root
   password: welcome1  
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+  endpoint:
+    health:
+      probes:
+        enabled: true            
